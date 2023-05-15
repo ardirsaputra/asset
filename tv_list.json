@@ -1,0 +1,12 @@
+[
+{
+  "id" : "1",
+  "name" : "Kompas TV",
+  "channel_name" : "Kompas TV",
+  "url_stream" : "https://www.youtube.com/watch?v=4rmf-lk3ito",
+  "url_channel" : "https://www.youtube.com/@kompastv",
+  "description" : "Channel Kompas TV, biasanya akan mengabarkan berita - berita di indonesia",
+  "updated_on":"15-5-2023",
+    "created_on":"15-5-2023"
+}
+]
