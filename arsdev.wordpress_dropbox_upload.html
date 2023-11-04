@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload to Dropbox</title>
+</head>
+<body>
+<h1>Upload a File to Dropbox</h1>
+    <form id="upload-form">
+        <input type="file" id="file-input" accept=".txt,.pdf,.doc,.docx">
+        <button type="submit">Upload to Dropbox</button>
+    </form>
+
+    <div id="status"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropbox/5.1.4/Dropbox-sdk.js"></script>
+<script>
+   var Dropbox = require('dropbox').Dropbox;
+
+var dbx = new Dropbox({
+    clientId: 'uat.ABAXMfwI0co_7XfMjUW_8ifGqI1keInR187ajW4kfT7dlpfudfkSFFqJ6V54wmSR8UIfmNO-71igOez64Q_7Urde2BLVUgzV4t4v1Sic-SanqcYOvL94idf12BRk91icFcIpBFG482bHW_iRRUL6WRMQ4FPndnJHIBUxBnrFzqOmYA7tQztaCWOMPXWlIy8Kdl7grmRnEz0c7YU-J280dIoyzMC7L9I1PiU3qhBxYpZlfyrE9zEz4jZ_nI2ydhJoXCtHgzGR__UpcKxWfj_Kabu83L26xrBreEC7srNU6-aSutTEAQAImr8cvlZHNiIVA5oPyxk14OPh1CnWXZfFMrk6o8UVMksznNq4Ze_KtAKcYD0pakftKSa92sE2mIiyoFgjzo9XONXvTXelbR9PSAA_qvBaGrKM879hSpS_uVY4nEvFb8b_2iDw12fKCmBAlCtuZz1Zurh56FNvYyx1KC1vd4WiPXp-bA_zew3KBMr9PxK8ovuCfs5Gw-aci9DI_KT652Ofm2_5qRcD6ZVF_LXDj9PgHqBVsaRqKIWIZroyOHrYFv_LdBfuqleJUIZF1MCx-mQa9ce5HQMWfQFQjtX0drsZXiKpdywkh_FUoX9B9fX8zlAwJLQnZBeh80pOerbAP9QmPv1axgRvhlrQOrVZpX2lDp_voHy8EeHFGmQNyK9EGLAvKRh516Rv-SfaqfmDbBRHNVr6iHsCrxsecOK0EzeOpM1m9ZtbQ4XVTLVMtYw64-sZU9XJ2iSe40t13cjkvkTtBC4-u-WTRzPo5nvySkDewbAofjKTzEh4_HOM46nnhmUi5pfNnq-z8NAUXBFi32h1ajAOJrW3d9WuAxEt5Vss72wMhyYelvIoM1d_XEyM41dH_MfFayTRE4IghMWfGPs9iTgk23PmeB3rMwDFVkix1-n-6cBFiI_0KFg8aAPClo6JYg49Rp1aGI2m6os7iV68REyyhV6KEuuALUxQO1i09csYDshKLQQTi42Gkoei5i_AqYXtUN3JKLTPb8K5QSaw1IrCM5-kEOSho9TcE2JmZzlTYwSMTuOi5jLQlczudrXwfO-fyI0v-tzz4wzqpmJablnMV5VxCRgsedcAEO8RM_AybNhT9oSR_e_SHFnwxFt65or6kLztF3PRsl_pLRi8uGEKxEPT1siC7wHRXeSzNm8WDDRsh8_U5qzKZJ-SYq_2Kf44QMCTwK7zcsdc2h5Ocs-BctOWi6vKTrsYRnjiYLTLK_Fyjzxv85zUMWuhDmmoHbIfJrUeXf9GEovCkIHlCJrAdBcH5wpRRKth-2L0cYE_uNUyTCNSpYSIgQ',
+    fetch: fetch
+});
+document.getElementById('upload-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var fileInput = document.getElementById('file-input');
+    var statusDiv = document.getElementById('status');
+    var file = fileInput.files[0];
+
+    if (!file) {
+        statusDiv.textContent = 'Please select a file to upload.';
+        return;
+    }
+
+    dbx.filesUpload({ path: '/' + file.name, contents: file })
+        .then(function (response) {
+            statusDiv.textContent = 'File uploaded to Dropbox: ' + response.name;
+        })
+        .catch(function (error) {
+            console.error(error);
+            statusDiv.textContent = 'Error uploading file to Dropbox.';
+        });
+});
+</script>
+
+</body>
+</html>
+
+
