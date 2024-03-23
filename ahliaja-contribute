@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontributor AhliAja</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-top: 0;
+        }
+        p {
+            line-height: 1.6;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kontributor AhliAja</h1>
+    </header>
+    <div class="container">
+        <h2>Tim Pengembang</h2>
+        <ul>
+            <!-- <li><strong>Nama Pengembang 1</strong> - Desainer UI/UX</li>-->
+            <li><strong>Ardirsaputra</strong> - Pengembang Front-end</li>
+            <li><strong>Ardirsaputra</strong> - Pengembang Back-end</li>
+        </ul>
+        
+        <h2>Kontributor Konten</h2>
+        <ul>
+            <!-- <li><strong>Nama Kontributor 1</strong> - Penulis Konten Matematika</li>
+            <li><strong>Nama Kontributor 2</strong> - Penulis Konten Sejarah</li>
+            <li><strong>Nama Kontributor 3</strong> - Penulis Konten Sains</li> -->
+        </ul>
+        
+        <h2>Mitra</h2>
+        <p>AhliAja berterima kasih kepada mitra-mitra berikut yang telah mendukung pengembangan aplikasi:</p>
+        <ul>
+            <!-- <li><strong>Nama Mitra 1</strong> - Perusahaan Teknologi</li>
+            <li><strong>Nama Mitra 2</strong> - Lembaga Pendidikan</li>
+            <li><strong>Nama Mitra 3</strong> - Organisasi Nirlaba</li> -->
+        </ul>
+    </div>
+</body>
+</html>
